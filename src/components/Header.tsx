@@ -137,6 +137,7 @@ const Header = () => {
                     </Link>
                   </li>
                 </ul>
+                
                 <div className="flex items-center gap-4 relative px-5">
                   <form onSubmit={handleSearch} className="relative">
                     <input
@@ -172,7 +173,7 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="px-3">
+              <li className="px-1">
                 <Link
                   href="/shop"
                   className="text-black block font-semibold text-[15px]"
@@ -180,7 +181,7 @@ const Header = () => {
                   Shop
                 </Link>
               </li>
-              <li className="px-3">
+              <li className="px-1">
                 <Link
                   href="/about"
                   className="text-black block font-semibold text-[15px]"
@@ -188,7 +189,7 @@ const Header = () => {
                   About
                 </Link>
               </li>
-              <li className="px-3">
+              <li className="px-1">
                 <Link
                   href="/contact"
                   className="text-black block font-semibold text-[15px]"
@@ -196,15 +197,25 @@ const Header = () => {
                   Contact
                 </Link>
               </li>
-              <li className="px-3">
+              <li className="px-1">
                 <Link
                   href="/blog"
                   className="text-black block font-semibold text-[15px]"
                 >
                   Blog
-                </Link>
+                </Link> 
               </li>
+              <li className="px-1">
+                <Link
+                  href="https://welcomed-tuna-73.accounts.dev/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2F"
+                  className="text-black block font-semibold text-[15px]"
+                >
+                  Sign in
+                </Link> 
+              </li>
+              
             </ul>
+            
           </div>
           {/* Icons */}
           <div className="flex items-center space-x-10 md:space-x-8">
