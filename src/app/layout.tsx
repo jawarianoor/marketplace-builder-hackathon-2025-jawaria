@@ -24,9 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="en">
         <head>
+          <title>My App</title>
           <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         </head>
         <body className={`${lato.className} antialiased`}>
