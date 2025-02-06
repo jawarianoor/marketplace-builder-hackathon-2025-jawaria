@@ -4,7 +4,6 @@ import { Lato } from "next/font/google";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { Toaster } from "@/components/ui/toaster";
 import { SessionProvider } from "next-auth/react";
-import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -24,27 +23,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <head>
-          <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        </head>
-        <body className={`${lato.className} antialiased`}>
-          <SessionProvider>
-            <Toaster />
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </header>
-            <LayoutWrapper>{children}</LayoutWrapper>
-          </SessionProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      </head>
+      <body
+        className={`${lato.className} antialiased`}
+      >
+        <SessionProvider>
+        <Toaster />
+        <LayoutWrapper>
+          {children}
+        </LayoutWrapper>
+        </SessionProvider>
+      </body>
+    </html>
   );
 }
